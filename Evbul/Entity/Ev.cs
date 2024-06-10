@@ -4,6 +4,7 @@ public class Ev
 {
     public int EvId { get; set; }
     public string? Baslik { get; set; }
+    public string? Image { get; set; }
     public int Kapasite { get; set; }
     public int YatakOdasi { get; set; }
     public int YatakSayisi { get; set; }
