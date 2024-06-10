@@ -1,0 +1,18 @@
+﻿@model List<Ev>
+
+
+<div class="card mb-3">
+    <div class="card-header">
+        <h5 class="card-title mb-0">Yeni Evler</h5>
+    </div>
+    <div class="card-body">
+        @foreach(var ev in Model)
+        {
+            <div class="mb-3">
+                <a>
+                    <h6 class="mb-0">@ev.Baslik</h6>
+                </a>
+            </div>
+        }
+    </div>
+</div>
