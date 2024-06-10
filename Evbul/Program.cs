@@ -23,7 +23,20 @@ app.UseStaticFiles();
 
 SeedData.TestVerileriniDoldur(app);
 
-app.MapDefaultControllerRoute();
+app.MapControllerRoute(
+    name:"ev_detay",
+    pattern: "evler/{url}",
+    defaults: new {controller = "Evler", action = "Detay"}
+);
+app.MapControllerRoute(
+    name:"ev_by_ozellik",
+    pattern: "evler/ozellik/{ozellik}",
+    defaults: new {controller = "Evler", action = "Index"}
+);
 
+app.MapControllerRoute(
+    name:"default",
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+);
 
 app.Run();

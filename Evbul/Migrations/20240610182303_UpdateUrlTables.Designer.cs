@@ -3,6 +3,7 @@ using System;
 using Evbul.Data.Concrete.EfCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Evbul.Migrations
 {
     [DbContext(typeof(EvbulContext))]
-    partial class EvbulContextModelSnapshot : ModelSnapshot
+    [Migration("20240610182303_UpdateUrlTables")]
+    partial class UpdateUrlTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.10");
@@ -102,9 +105,6 @@ namespace Evbul.Migrations
                 {
                     b.Property<int>("OzellikId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("Renk")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Url")

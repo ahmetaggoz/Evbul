@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\ahmet\OneDrive\Masaüstü\Bitirme Projem\aspnetcore\Evbul\Evbul
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Evler/Detay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZsZXJcRGV0YXkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Evler/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZsZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

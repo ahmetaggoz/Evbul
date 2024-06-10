@@ -1,0 +1,23 @@
+﻿@model Ev
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="bg-white p-4">
+            <h1 class="h4 mb-4">@Model.Baslik</h1>
+            <div class="ozellikler">
+                @foreach(var ozellik in Model.Ozellikler)
+                {
+                    <a href="/evler/ozellik/@ozellik.Url" class="badge bg-@ozellik.Renk bg-opacity-10 text-@ozellik.Renk mb-2 fw-bold">@ozellik.Yazi</a>
+                }
+            </div>
+            
+            <img src="~/img/@Model.Image" class="img-fluid rounded" />
+            <div>@Model.Aciklama</div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <vc:ozellikler-menu></vc:ozellikler-menu>
+        <vc:yeni-evler></vc:yeni-evler>
+    </div>
+</div>
+

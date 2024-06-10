@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Evbul.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Evbul.Data.Concrete.EfCore;
 
@@ -16,11 +17,11 @@ public static class SeedData
             if(!context.Ozellikler.Any())
             {
                 context.Ozellikler.AddRange(
-                    new Entity.Ozellik { Yazi = "Deniz Manzarası"},
-                    new Entity.Ozellik { Yazi = "Açık hava duşu"},
-                    new Entity.Ozellik { Yazi = "ütü"},
-                    new Entity.Ozellik { Yazi = "TV"},
-                    new Entity.Ozellik { Yazi = "Klima"}
+                    new Entity.Ozellik { Yazi = "Deniz Manzarası", Url = "deniz-manzarasi", Renk = OzellikRenkleri.danger},
+                    new Entity.Ozellik { Yazi = "Açık hava duşu", Url = "acik-hava-dusu", Renk = OzellikRenkleri.warning},
+                    new Entity.Ozellik { Yazi = "ütü", Url = "utu", Renk = OzellikRenkleri.secondary},
+                    new Entity.Ozellik { Yazi = "TV", Url = "tv", Renk = OzellikRenkleri.success},
+                    new Entity.Ozellik { Yazi = "Klima", Url = "klima", Renk = OzellikRenkleri.primary}
                 );
                 context.SaveChanges();
             }
@@ -37,6 +38,7 @@ public static class SeedData
                 context.Evler.AddRange(
                     new Entity.Ev {
                         Baslik = "Tiny Malaika",
+                        Url = "tiny-malaika",
                         Kapasite = 2,
                         YatakOdasi = 2,
                         YatakSayisi = 4,
@@ -51,6 +53,7 @@ public static class SeedData
                     },
                     new Entity.Ev {
                         Baslik = "My Evilia Villa",
+                        Url = "my-evilia-villa",
                         Kapasite = 6,
                         YatakOdasi = 3,
                         YatakSayisi = 3,
@@ -65,6 +68,7 @@ public static class SeedData
                     },
                     new Entity.Ev {
                         Baslik = "Patara Resort'ta  2 yatak odalı lüks deniz kenarında villa",
+                        Url = "patara-resortta-2-yatak-odali-luks-deniz-kenarinda-villa",
                         Kapasite = 4,
                         YatakOdasi = 2,
                         YatakSayisi = 3,
