@@ -5,14 +5,38 @@
         <div class="bg-white p-4">
             <h1 class="h4 mb-4">@Model.Baslik</h1>
             <div class="ozellikler">
-                @foreach(var ozellik in Model.Ozellikler)
+                @foreach (var ozellik in Model.Ozellikler)
                 {
-                    <a href="/evler/ozellik/@ozellik.Url" class="badge bg-@ozellik.Renk bg-opacity-10 text-@ozellik.Renk mb-2 fw-bold">@ozellik.Yazi</a>
+                    <a href="/evler/ozellik/@ozellik.Url"
+                        class="badge bg-@ozellik.Renk bg-opacity-10 text-@ozellik.Renk mb-2 fw-bold">@ozellik.Yazi</a>
                 }
             </div>
-            
+
             <img src="~/img/@Model.Image" class="img-fluid rounded" />
             <div>@Model.Aciklama</div>
+        </div>
+        <div class="bg-white mt-3">
+            <div class="card border-0">
+                <div class="card-header pb-0">
+                    <h4>@Model.Yorumlar.Count adet yorum</h4>
+                </div>
+                <div class="card-body">
+                    @foreach (var yorum in Model.Yorumlar)
+                    {
+                        <div class="my-4 d-flex">
+                            <img src="/img/@yorum.Kullanici.Image" alt="" class="avatar rounded-circle float-start me-3">
+                            <div>
+                                <div class="mb-2">
+                                    <h6>@yorum.Kullanici.KullaniciAd</h6>
+                                    <span>@yorum.Tarih</span>
+                                </div>
+                                <p>@yorum.Yazi</p>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
         </div>
     </div>
     <div class="col-lg-4">
@@ -20,4 +44,3 @@
         <vc:yeni-evler></vc:yeni-evler>
     </div>
 </div>
-

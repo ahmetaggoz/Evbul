@@ -28,8 +28,8 @@ public static class SeedData
             if(!context.Kullanicilar.Any())
             {
                 context.Kullanicilar.AddRange(
-                    new Entity.Kullanici { KullaniciAd = "ahmet ağgöz"},
-                    new Entity.Kullanici { KullaniciAd = "mahmut orhan"}
+                    new Entity.Kullanici { KullaniciAd = "ahmet ağgöz", Image = "p1.jpg"},
+                    new Entity.Kullanici { KullaniciAd = "mahmut orhan", Image = "p2.jpg"}
                 );
                 context.SaveChanges();
             }
@@ -49,7 +49,11 @@ public static class SeedData
                         KullaniciId = 1,
                         Aciklama = "Şovalye adasındaki evimiz, etkileyici deniz, körfez ve doğa manzaralarıyla benzersiz bir konaklama deneyimi sunuyor.",
                         Ozellikler = context.Ozellikler.Take(3).ToList(),
-                        Image = "1.jpg"
+                        Image = "1.jpg",
+                        Yorumlar = new List<Yorum> {
+                            new Yorum { Yazi = "huzur dolu bir tatil geçirdim", Tarih = new DateTime(), KullaniciId = 1 },
+                            new Yorum { Yazi = "eşyalar çok temiz ve hijyen konusunda çok memnun kaldık", Tarih = new DateTime(), KullaniciId = 2 }
+                        }
                     },
                     new Entity.Ev {
                         Baslik = "My Evilia Villa",

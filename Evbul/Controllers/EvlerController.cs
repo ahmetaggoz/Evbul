@@ -34,6 +34,8 @@ public class EvlerController : Controller
         _evRepository
         .Evler
         .Include(x => x.Ozellikler)
+        .Include(y => y.Yorumlar)
+        .ThenInclude(k => k.Kullanici)
         .FirstOrDefaultAsync(e => e.Url == url));
     }
 }
