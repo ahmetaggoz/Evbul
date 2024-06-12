@@ -15,6 +15,7 @@ builder.Services.AddDbContext<EvbulContext>(options => {
 
 builder.Services.AddScoped<IEvRepository, EfEvRepository>();
 builder.Services.AddScoped<IOzellikRepository, EfOzellikRepository>();
+builder.Services.AddScoped<IYorumRepository, EfYorumRepository>();
 
 var app = builder.Build();
 
@@ -25,7 +26,7 @@ SeedData.TestVerileriniDoldur(app);
 
 app.MapControllerRoute(
     name:"ev_detay",
-    pattern: "evler/{url}",
+    pattern: "evler/detay/{url}",
     defaults: new {controller = "Evler", action = "Detay"}
 );
 app.MapControllerRoute(

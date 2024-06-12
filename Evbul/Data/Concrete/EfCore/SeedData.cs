@@ -51,8 +51,8 @@ public static class SeedData
                         Ozellikler = context.Ozellikler.Take(3).ToList(),
                         Image = "1.jpg",
                         Yorumlar = new List<Yorum> {
-                            new Yorum { Yazi = "huzur dolu bir tatil geçirdim", Tarih = new DateTime(), KullaniciId = 1 },
-                            new Yorum { Yazi = "eşyalar çok temiz ve hijyen konusunda çok memnun kaldık", Tarih = new DateTime(), KullaniciId = 2 }
+                            new Yorum { Yazi = "huzur dolu bir tatil geçirdim", Tarih = DateTime.Now.AddDays(-10), KullaniciId = 1 },
+                            new Yorum { Yazi = "eşyalar çok temiz ve hijyen konusunda çok memnun kaldık", Tarih = DateTime.Now.AddDays(-10), KullaniciId = 2 }
                         }
                     },
                     new Entity.Ev {
