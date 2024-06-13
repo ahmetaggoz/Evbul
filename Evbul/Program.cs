@@ -1,5 +1,6 @@
 using Evbul.Data.Abstract;
 using Evbul.Data.Concrete.EfCore;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,10 +17,17 @@ builder.Services.AddDbContext<EvbulContext>(options => {
 builder.Services.AddScoped<IEvRepository, EfEvRepository>();
 builder.Services.AddScoped<IOzellikRepository, EfOzellikRepository>();
 builder.Services.AddScoped<IYorumRepository, EfYorumRepository>();
+builder.Services.AddScoped<IKullaniciRepository, EfKullaniciRepository>();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
 
 var app = builder.Build();
 
 app.UseStaticFiles();
+
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
 
 
 SeedData.TestVerileriniDoldur(app);

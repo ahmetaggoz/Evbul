@@ -28,8 +28,8 @@ public static class SeedData
             if(!context.Kullanicilar.Any())
             {
                 context.Kullanicilar.AddRange(
-                    new Entity.Kullanici { KullaniciAd = "ahmet ağgöz", Image = "p1.jpg"},
-                    new Entity.Kullanici { KullaniciAd = "mahmut orhan", Image = "p2.jpg"}
+                    new Entity.Kullanici { KullaniciAd = "ahmet ağgöz",Ad = "Ahmet Ağgöz", Parola = "123456", Eposta ="info@ahmetaggoz.com", Image = "p1.jpg"},
+                    new Entity.Kullanici { KullaniciAd = "mahmut orhan",Ad = "Mahmut Orhan", Eposta = "info@mahmutorhan.com",Parola = "123456", Image = "p2.jpg"}
                 );
                 context.SaveChanges();
             }

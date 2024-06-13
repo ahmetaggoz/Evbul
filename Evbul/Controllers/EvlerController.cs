@@ -19,6 +19,7 @@ public class EvlerController : Controller
     }
     public async Task<IActionResult> Index(string ozellik)
     {
+        var claims = User.Claims;
         var evler = _evRepository.Evler;
         if(!string.IsNullOrEmpty(ozellik))
         {
