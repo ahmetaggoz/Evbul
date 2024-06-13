@@ -18,9 +18,18 @@ public class KullanicilarController : Controller
 
     public IActionResult Giris()
     {
+        if(User.Identity!.IsAuthenticated)
+        {
+            return RedirectToAction("Index", "Evler");
+        }
         return View();
     }
 
+    public async Task<IActionResult> Cikis()
+    {
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return RedirectToAction("Giris");
+    }
     [HttpPost]
     public async Task<IActionResult> Giris(GirisViewModel model)
     {
@@ -35,6 +44,7 @@ public class KullanicilarController : Controller
                 userClaims.Add(new Claim(ClaimTypes.NameIdentifier, isUser.KullaniciId.ToString()));
                 userClaims.Add(new Claim(ClaimTypes.Name, isUser.KullaniciAd ?? ""));
                 userClaims.Add(new Claim(ClaimTypes.GivenName, isUser.Ad ?? ""));
+                userClaims.Add(new Claim(ClaimTypes.UserData, isUser.Image ?? ""));
 
                 if(isUser.Eposta == "info@ahmetaggoz.com")
                 {

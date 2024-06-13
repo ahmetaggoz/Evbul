@@ -1,4 +1,5 @@
-﻿using Evbul.Data.Abstract;
+﻿using System.Security.Claims;
+using Evbul.Data.Abstract;
 using Evbul.Data.Concrete.EfCore;
 using Evbul.Entity;
 using Evbul.Models;
@@ -19,7 +20,6 @@ public class EvlerController : Controller
     }
     public async Task<IActionResult> Index(string ozellik)
     {
-        var claims = User.Claims;
         var evler = _evRepository.Evler;
         if(!string.IsNullOrEmpty(ozellik))
         {
@@ -43,21 +43,25 @@ public class EvlerController : Controller
         .FirstOrDefaultAsync(e => e.Url == url));
     }
     [HttpPost]
-    public JsonResult YorumEkle(int EvId, string KullaniciAd, string Yazi)
+    public JsonResult YorumEkle(int EvId,  string Yazi)
     {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var username = User.FindFirstValue(ClaimTypes.Name);
+        var avatar = User.FindFirstValue(ClaimTypes.UserData);
+
         var entity = new Yorum 
         {
+            EvId = EvId,
             Yazi = Yazi,
             Tarih = DateTime.Now,
-            EvId = EvId,
-            Kullanici = new Kullanici {KullaniciAd = KullaniciAd, Image = "avatar.png"}
+            KullaniciId = int.Parse(userId ?? "")
         };
         _yorumRepository.YorumOlustur(entity);
        return Json(new {
-        KullaniciAd,
+        username,
         Yazi,
         entity.Tarih,
-        entity.Kullanici.Image
+        avatar
        });
     }
 }
