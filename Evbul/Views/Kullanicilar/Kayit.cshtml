@@ -1,0 +1,39 @@
+﻿@model KayitViewModel
+<div class="row">
+    <div class="col-12">
+        <div class="bg-white p-4">
+            
+        
+        <h1>Kayıt ol</h1>
+        <form action="Kayit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="KullaniciAd" class="form-label"></label>
+                <input asp-for="KullaniciAd" class="form-control">
+                <span asp-validation-for="KullaniciAd" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Ad" class="form-label"></label>
+                <input asp-for="Ad" class="form-control">
+                <span asp-validation-for="Ad" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Eposta" class="form-label"></label>
+                <input asp-for="Eposta" class="form-control">
+                <span asp-validation-for="Eposta" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Parola" class="form-label"></label>
+                <input asp-for="Parola" class="form-control">
+                <span asp-validation-for="Parola" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ParolaDogrula" class="form-label"></label>
+                <input asp-for="ParolaDogrula" class="form-control">
+                <span asp-validation-for="ParolaDogrula" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Kayıt</button>
+        </form>
+        </div>
+    </div>
+</div>

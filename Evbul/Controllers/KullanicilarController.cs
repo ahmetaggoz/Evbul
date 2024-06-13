@@ -24,6 +24,20 @@ public class KullanicilarController : Controller
         }
         return View();
     }
+    public IActionResult Kayit()
+    {
+        
+        return View();
+    }
+    [HttpPost]
+    public IActionResult Kayit(KayitViewModel model)
+    {
+        if(ModelState.IsValid)
+        {
+            return RedirectToAction("Giris");
+        }
+        return View(model);
+    }
 
     public async Task<IActionResult> Cikis()
     {
