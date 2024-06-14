@@ -6,4 +6,5 @@ public interface IEvRepository
 {
     IQueryable<Ev> Evler {get;}
     void EvOlustur(Ev ev);
+    void EditEv(Ev ev);
 }

@@ -21,7 +21,7 @@ public class EvlerController : Controller
     }
     public async Task<IActionResult> Index(string ozellik)
     {
-        var evler = _evRepository.Evler;
+        var evler = _evRepository.Evler.Where(e => e.AktifMi);
         if(!string.IsNullOrEmpty(ozellik))
         {
             evler = evler.Where(x => x.Ozellikler.Any(t => t.Url == ozellik));
@@ -110,5 +110,63 @@ public class EvlerController : Controller
             evler = evler.Where(e => e.KullaniciId == userId);
         }
         return View(await evler.ToListAsync());
+    }
+    [Authorize]
+
+    public IActionResult Edit(int? id)
+    {
+        if(id == null)
+        {
+            return NotFound();
+        }
+
+        var ev = _evRepository.Evler.FirstOrDefault(e => e.EvId == id);
+
+        if(ev == null)
+        {
+            return NotFound();
+        }
+        return View(new EvOlusturViewModel {
+            EvId = ev.EvId,
+            Baslik = ev.Baslik,
+            Aciklama = ev.Aciklama,
+            Kapasite = ev.Kapasite,
+            YatakOdasi = ev.YatakOdasi,
+            YatakSayisi = ev.YatakSayisi,
+            Banyo = ev.Banyo,
+            Fiyat = ev.Fiyat,
+            Url = ev.Url,
+            AktifMi = ev.AktifMi
+        });
+    }
+    [Authorize]
+    [HttpPost]
+    public IActionResult Edit(EvOlusturViewModel model)
+    {
+        if(ModelState.IsValid)
+        {
+            var entityToUpdate = new Ev {
+                EvId = model.EvId,
+                Baslik = model.Baslik,
+                Aciklama = model.Aciklama,
+                Kapasite = model.Kapasite,
+                YatakOdasi = model.YatakOdasi,
+                YatakSayisi = model.YatakSayisi,
+                Banyo = model.Banyo,
+                Fiyat = model.Fiyat,
+                Url = model.Url,
+                AktifMi = model.AktifMi
+            };
+            
+            if(User.FindFirstValue(ClaimTypes.Role) == "admin")
+            {
+                entityToUpdate.AktifMi = model.AktifMi;
+            }
+
+
+            _evRepository.EditEv(entityToUpdate);
+            return RedirectToAction("List");
+        }
+        return View(model);
     }
 }

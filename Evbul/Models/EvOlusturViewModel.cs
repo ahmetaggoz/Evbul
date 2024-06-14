@@ -4,6 +4,7 @@ namespace Evbul.Models;
 
 public class EvOlusturViewModel
 {
+    public int EvId { get; set; }
     [Required]
     [Display(Name ="Başlık")]
     public string? Baslik { get; set; }
@@ -31,4 +32,5 @@ public class EvOlusturViewModel
     [Required]
     [Display(Name ="Url")]
     public string? Url { get; set; }
+    public bool AktifMi { get; set; }
 }
