@@ -30,11 +30,27 @@ public class KullanicilarController : Controller
         return View();
     }
     [HttpPost]
-    public IActionResult Kayit(KayitViewModel model)
+    public async Task<IActionResult> Kayit(KayitViewModel model)
     {
         if(ModelState.IsValid)
         {
+            var user = await _kullaniciRepository.Kullanicilar.FirstOrDefaultAsync(u => u.Eposta == model.Eposta || u.KullaniciAd == model.KullaniciAd);
+
+            if(user == null)
+            {
+                _kullaniciRepository.KullaniciOlustur(new Entity.Kullanici {
+                    KullaniciAd = model.KullaniciAd,
+                    Ad = model.Ad,
+                    Eposta = model.Eposta,
+                    Parola = model.Parola,
+                    Image = "avatar.png"
+                });
             return RedirectToAction("Giris");
+
+            }else
+            {
+                ModelState.AddModelError("", "Kullanıcı Adı ve ya Eposta kullanımda");
+            }
         }
         return View(model);
     }
