@@ -1,0 +1,34 @@
+﻿@model Kullanici
+
+
+<div class="row">
+    <div class="col-md-2">
+        <div class="bg-white p-2">
+            <img src="/img/@Model.Image" class="img-fluid" alt="">
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="bg-white p-4">
+            <h5>@Model.Ad</h5>
+            <hr>
+            <div id="evler">
+                <h5 class="my-4">Paylaşılan Evler</h5>
+                <ul class="list-group">
+                    @foreach(var ev in @Model.Evler)
+                    {
+                        <li class="list-group-item"><i class="bi bi-caret-right-fill"></i> <a href="/evler/detay/@ev.Url"> @ev.Baslik </a></li>
+                    }
+                </ul>
+            </div>
+            <div id="yorumlar">
+                <h5 class="my-4">Yorumlar</h5>
+                 <ul class="list-group">
+                    @foreach(var yorum in @Model.Yorumlar)
+                    {
+                        <li class="list-group-item"><i class="bi bi-chat-right-text-fill"></i>  @yorum.Yazi <i><u>[@yorum.Ev.Baslik]</u></i> </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

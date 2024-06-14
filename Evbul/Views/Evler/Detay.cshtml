@@ -13,6 +13,11 @@
             </div>
 
             <img src="~/img/@Model.Image" class="img-fluid rounded" />
+            <ul class="list-inline my-3">
+                <li class="list-inline-item"><i class="bi bi-calender"></i> @Model.YayinlamaTarihi.ToString("d")</li>
+                <li class="list-inline-item"><i class="bi bi-person-circle"></i> <a href="/profile/@Model.Kullanici.KullaniciAd"> @Model.Kullanici.Ad </a></li>
+            </ul>
+            <hr class="py-3">
             <div>@Html.Raw(@Model.Aciklama)</div>
         </div>
         <div class="bg-white mt-3">
@@ -29,7 +34,10 @@
                                     class="avatar rounded-circle float-start me-3">
                                 <div>
                                     <div class="mb-2 d-flex">
-                                        <h6 class="me-2">@yorum.Kullanici.KullaniciAd</h6>
+                                        <h6 class="me-2">
+                                            <a href="/profile/@yorum.Kullanici.KullaniciAd"> @yorum.Kullanici.Ad </a>
+                                         
+                                        </h6>
                                         <small>@yorum.Tarih.ToString("d")</small>
                                     </div>
                                     <p>@yorum.Yazi</p>

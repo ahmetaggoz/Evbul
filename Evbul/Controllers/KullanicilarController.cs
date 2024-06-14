@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.IO.Compression;
+using System.Security.Claims;
 using Evbul.Data.Abstract;
 using Evbul.Models;
 using Microsoft.AspNetCore.Authentication;
@@ -104,5 +105,24 @@ public class KullanicilarController : Controller
         }
 
         return View(model);
+    }
+
+    public IActionResult Profile(string username)
+    {
+        if(string.IsNullOrEmpty(username))
+        {
+            return NotFound();
+        }
+        var kullanici = _kullaniciRepository
+                        .Kullanicilar
+                        .Include(x => x.Evler)
+                        .Include(x => x.Yorumlar)
+                        .ThenInclude(x => x.Ev)
+                        .FirstOrDefault(x => x.KullaniciAd == username);
+        if(kullanici == null)
+        {
+            return NotFound();
+        }
+        return View(kullanici);
     }
 }

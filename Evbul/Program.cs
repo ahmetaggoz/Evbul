@@ -44,6 +44,12 @@ app.MapControllerRoute(
     pattern: "evler/ozellik/{ozellik}",
     defaults: new {controller = "Evler", action = "Index"}
 );
+app.MapControllerRoute(
+    name:"user_profile",
+    pattern: "profile/{username}",
+    defaults: new {controller = "Kullanicilar", action = "Profile"}
+);
+
 
 app.MapControllerRoute(
     name:"default",

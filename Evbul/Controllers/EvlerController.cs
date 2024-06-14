@@ -38,6 +38,7 @@ public class EvlerController : Controller
         return View(await 
         _evRepository
         .Evler
+        .Include(x => x.Kullanici)
         .Include(x => x.Ozellikler)
         .Include(y => y.Yorumlar)
         .ThenInclude(k => k.Kullanici)
