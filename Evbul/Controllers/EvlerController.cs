@@ -3,6 +3,7 @@ using Evbul.Data.Abstract;
 using Evbul.Data.Concrete.EfCore;
 using Evbul.Entity;
 using Evbul.Models;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -63,5 +64,35 @@ public class EvlerController : Controller
         entity.Tarih,
         avatar
        });
+    }
+    public IActionResult Olustur()
+    {
+        return View();
+    }
+    [HttpPost]
+    public IActionResult Olustur(EvOlusturViewModel model)
+    {
+        if(ModelState.IsValid)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            _evRepository.EvOlustur(
+                new Ev {
+                    Baslik = model.Baslik,
+                    Aciklama = model.Aciklama,
+                    Kapasite = model.Kapasite,
+                    YatakOdasi = model.YatakOdasi,
+                    YatakSayisi = model.YatakSayisi,
+                    Banyo = model.Banyo,
+                    Fiyat = model.Fiyat,
+                    KullaniciId = int.Parse(userId 
+                    ?? ""),
+                    YayinlamaTarihi = DateTime.Now,
+                    Image = "1.jpg",
+                    AktifMi = false
+                }
+            );
+            return RedirectToAction("Index");
+        }
+        return View(model);
     }
 }
