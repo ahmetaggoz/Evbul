@@ -19,7 +19,9 @@ builder.Services.AddScoped<IOzellikRepository, EfOzellikRepository>();
 builder.Services.AddScoped<IYorumRepository, EfYorumRepository>();
 builder.Services.AddScoped<IKullaniciRepository, EfKullaniciRepository>();
 
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => {
+    options.LoginPath = "/Kullanicilar/Giris";
+});
 
 var app = builder.Build();
 

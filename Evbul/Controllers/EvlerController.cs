@@ -3,7 +3,7 @@ using Evbul.Data.Abstract;
 using Evbul.Data.Concrete.EfCore;
 using Evbul.Entity;
 using Evbul.Models;
-
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -65,11 +65,13 @@ public class EvlerController : Controller
         avatar
        });
     }
+    [Authorize]
     public IActionResult Olustur()
     {
         return View();
     }
     [HttpPost]
+    [Authorize]
     public IActionResult Olustur(EvOlusturViewModel model)
     {
         if(ModelState.IsValid)
@@ -94,5 +96,19 @@ public class EvlerController : Controller
             return RedirectToAction("Index");
         }
         return View(model);
+    }
+    [Authorize]
+    public async Task<IActionResult> List()
+    {
+        var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier) ?? "");
+        var role = User.FindFirstValue(ClaimTypes.Role);
+
+        var evler = _evRepository.Evler;
+
+        if(string.IsNullOrEmpty(role))
+        {
+            evler = evler.Where(e => e.KullaniciId == userId);
+        }
+        return View(await evler.ToListAsync());
     }
 }
