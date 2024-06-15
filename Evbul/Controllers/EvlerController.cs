@@ -24,6 +24,7 @@ public class EvlerController : Controller
     public async Task<IActionResult> Index(string ozellik, string searchString)
     {
         var evler = _evRepository.Evler.Where(e => e.AktifMi);
+        
         if(!string.IsNullOrEmpty(ozellik))
         {
             evler = evler.Where(x => x.Ozellikler.Any(t => t.Url == ozellik));
@@ -31,6 +32,7 @@ public class EvlerController : Controller
         if(!string.IsNullOrEmpty(searchString))
         {
             evler = evler.Where(a => a.Baslik!.Contains(searchString));
+            
         }
         return View(
             new EvViewModel
