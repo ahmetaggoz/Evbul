@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kw16OgWKoltwLNReQ+BK0+eLhEXxemIxqDmScsCjWbs=",
+  "Hash": "srV89v1CQOQ2l2kXV4MtkcBQGRAcXggywpHioGNtfmc=",
   "Source": "Evbul",
   "BasePath": "_content/Evbul",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\1206c551-084c-4751-a8cc-510c1ce1374b.jpeg",
+      "SourceId": "Evbul",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\",
+      "BasePath": "_content/Evbul",
+      "RelativePath": "img/1206c551-084c-4751-a8cc-510c1ce1374b.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\1206c551-084c-4751-a8cc-510c1ce1374b.jpeg"
     },
     {
       "Identity": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\15a842ee-ee58-494a-a587-8d7d4a8c2922.jpeg",

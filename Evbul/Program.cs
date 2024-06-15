@@ -53,7 +53,7 @@ app.MapControllerRoute(
 
 app.MapControllerRoute(
     name:"default",
-    pattern: "{controller=Home}/{action=Index}/{id?}"
+    pattern: "{controller=Evler}/{action=Index}/{id?}"
 );
 
 app.Run();

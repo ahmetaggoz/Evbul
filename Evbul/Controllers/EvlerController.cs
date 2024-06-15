@@ -21,12 +21,16 @@ public class EvlerController : Controller
         _ozellikRepository = ozellikRepository;
     
     }
-    public async Task<IActionResult> Index(string ozellik)
+    public async Task<IActionResult> Index(string ozellik, string searchString)
     {
         var evler = _evRepository.Evler.Where(e => e.AktifMi);
         if(!string.IsNullOrEmpty(ozellik))
         {
             evler = evler.Where(x => x.Ozellikler.Any(t => t.Url == ozellik));
+        }
+        if(!string.IsNullOrEmpty(searchString))
+        {
+            evler = evler.Where(a => a.Baslik!.Contains(searchString));
         }
         return View(
             new EvViewModel
