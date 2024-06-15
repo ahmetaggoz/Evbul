@@ -13,10 +13,12 @@ public class EvlerController : Controller
 {
     private readonly IEvRepository _evRepository;
     private readonly IYorumRepository _yorumRepository;
-    public EvlerController(IEvRepository evRepository, IYorumRepository yorumRepository)
+    private readonly IOzellikRepository _ozellikRepository;
+    public EvlerController(IEvRepository evRepository, IYorumRepository yorumRepository, IOzellikRepository ozellikRepository)
     {
         _evRepository = evRepository;
         _yorumRepository = yorumRepository;
+        _ozellikRepository = ozellikRepository;
     
     }
     public async Task<IActionResult> Index(string ozellik)
@@ -121,12 +123,13 @@ public class EvlerController : Controller
             return NotFound();
         }
 
-        var ev = _evRepository.Evler.FirstOrDefault(e => e.EvId == id);
+        var ev = _evRepository.Evler.Include(x => x.Ozellikler).FirstOrDefault(e => e.EvId == id);
 
         if(ev == null)
         {
             return NotFound();
         }
+        ViewBag.Ozellikler = _ozellikRepository.Ozellikler.ToList();
         return View(new EvOlusturViewModel {
             EvId = ev.EvId,
             Baslik = ev.Baslik,
@@ -137,12 +140,13 @@ public class EvlerController : Controller
             Banyo = ev.Banyo,
             Fiyat = ev.Fiyat,
             Url = ev.Url,
-            AktifMi = ev.AktifMi
+            AktifMi = ev.AktifMi,
+            Ozellikler = ev.Ozellikler
         });
     }
     [Authorize]
     [HttpPost]
-    public IActionResult Edit(EvOlusturViewModel model)
+    public IActionResult Edit(EvOlusturViewModel model, int[] ozelliklerIdler)
     {
         if(ModelState.IsValid)
         {
@@ -165,9 +169,10 @@ public class EvlerController : Controller
             }
 
 
-            _evRepository.EditEv(entityToUpdate);
+            _evRepository.EditEv(entityToUpdate, ozelliklerIdler);
             return RedirectToAction("List");
         }
+        ViewBag.Ozellikler = _ozellikRepository.Ozellikler.ToList();
         return View(model);
     }
 }

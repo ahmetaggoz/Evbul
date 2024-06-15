@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Evbul.Entity;
 
 namespace Evbul.Models;
 
@@ -33,4 +34,5 @@ public class EvOlusturViewModel
     [Display(Name ="Url")]
     public string? Url { get; set; }
     public bool AktifMi { get; set; }
+    public List<Ozellik> Ozellikler { get; set; } = new();
 }
