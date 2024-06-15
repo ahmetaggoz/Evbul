@@ -15,5 +15,6 @@ public class EfKullaniciRepository : IKullaniciRepository
     public void KullaniciOlustur(Kullanici kullanici)
     {
         _context.Kullanicilar.Add(kullanici);
+        _context.SaveChanges();
     }
 }
