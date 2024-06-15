@@ -24,6 +24,7 @@ public class EvlerController : Controller
     public async Task<IActionResult> Index(string ozellik, string searchString)
     {
         var evler = _evRepository.Evler.Where(e => e.AktifMi);
+   
         
         if(!string.IsNullOrEmpty(ozellik))
         {
@@ -37,7 +38,8 @@ public class EvlerController : Controller
         return View(
             new EvViewModel
             {
-                Evler = await evler.ToListAsync()
+                Evler = await evler.Include(u => u.Kullanici).ToListAsync()
+                
             }
         );
     }

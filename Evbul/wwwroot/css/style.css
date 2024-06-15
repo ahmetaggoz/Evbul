@@ -1,5 +1,5 @@
 body {
-    background-color: #eff2f6;
+    background-color: white;
 }
 a {
     text-decoration: none;
@@ -7,4 +7,8 @@ a {
 .avatar {
     width: 3rem;
     height: 3rem;
+}
+
+#ozellik:hover {
+    font-weight: 700;
 }

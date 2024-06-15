@@ -2,12 +2,14 @@
 
 
 
-            <div class="d-inline mb-3 bg-white p-4">
+            <div class="d-inline mb-3  p-4">
             @foreach (var ozellik in Model)
             {
+                <a id="ozellik" href="/evler/ozellik/@ozellik.Url" class="btn btn-sm">
                 <div class="d-inline-flex flex-column">
-                    <i class="bi bi-@ozellik.Icon text-center"></i>
-                    <a href="/evler/ozellik/@ozellik.Url" class="btn btn-outline-secondary btn-sm">@ozellik.Yazi</a>
+                    <i style="font-size: 2rem;" class="bi bi-@ozellik.Icon text-center"></i>
+                    <p>@ozellik.Yazi</p>
                 </div>
+                </a>
             }
             </div>

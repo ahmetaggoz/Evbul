@@ -1,4 +1,5 @@
-﻿namespace Evbul.Entity;
+﻿
+namespace Evbul.Entity;
 
 public class Kullanici
 {
@@ -10,4 +11,9 @@ public class Kullanici
     public string? Image { get; set; }
     public List<Ev> Evler { get; set; } = new List<Ev>();
     public List<Yorum> Yorumlar { get; set; } = new List<Yorum>();
+
+    public static implicit operator Kullanici(List<Ev> v)
+    {
+        throw new NotImplementedException();
+    }
 }
