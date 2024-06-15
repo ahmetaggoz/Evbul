@@ -6,7 +6,7 @@
             
         
         <h1>Ev Oluştur</h1>
-        <form action="Olustur" method="post">
+        <form action="Olustur" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="mb-3">
                 <label asp-for="Baslik" class="form-label"></label>
@@ -17,6 +17,9 @@
                 <label asp-for="Aciklama" class="form-label"></label>
                 <textarea asp-for="Aciklama" class="form-control"></textarea>
                 <span asp-validation-for="Aciklama" class="text-danger"></span>
+            </div>
+            <div class="input-group mb-3">
+                <input type="file" name="imgFile" id="imgFile" class="form-control">
             </div>
             <div class="mb-3">
                 <label asp-for="Kapasite" class="form-label"></label>

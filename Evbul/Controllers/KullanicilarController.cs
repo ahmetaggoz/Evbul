@@ -31,22 +31,30 @@ public class KullanicilarController : Controller
         return View();
     }
     [HttpPost]
-    public async Task<IActionResult> Kayit(KayitViewModel model)
+    public async Task<IActionResult> Kayit(KayitViewModel model, IFormFile imgFile)
     {
+        var extension = Path.GetExtension(imgFile.FileName);
+        var randomFileName = string.Format($"{Guid.NewGuid().ToString()}{extension}");
+        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img", randomFileName);
         if(ModelState.IsValid)
         {
+            
             var user = await _kullaniciRepository.Kullanicilar.FirstOrDefaultAsync(u => u.Eposta == model.Eposta || u.KullaniciAd == model.KullaniciAd);
 
             if(user == null)
             {
+                using(var stream = new FileStream(path, FileMode.Create))
+                {
+                    await imgFile.CopyToAsync(stream);
+                }
                 _kullaniciRepository.KullaniciOlustur(new Entity.Kullanici {
                     KullaniciAd = model.KullaniciAd,
                     Ad = model.Ad,
                     Eposta = model.Eposta,
                     Parola = model.Parola,
-                    Image = "avatar.png"
+                    Image = randomFileName
                 });
-            return RedirectToAction("Giris");
+                return RedirectToAction("Giris");
 
             }else
             {

@@ -5,7 +5,7 @@
             
         
         <h1>Kayıt ol</h1>
-        <form action="Kayit" method="post">
+        <form action="Kayit" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="mb-3">
                 <label asp-for="KullaniciAd" class="form-label"></label>
@@ -16,6 +16,9 @@
                 <label asp-for="Ad" class="form-label"></label>
                 <input asp-for="Ad" class="form-control">
                 <span asp-validation-for="Ad" class="text-danger"></span>
+            </div>
+            <div class="input-group mb-3">
+                <input type="file" name="imgFile" id="imgFile" class="form-control">
             </div>
             <div class="mb-3">
                 <label asp-for="Eposta" class="form-label"></label>

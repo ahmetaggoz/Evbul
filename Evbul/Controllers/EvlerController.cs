@@ -75,10 +75,17 @@ public class EvlerController : Controller
     }
     [HttpPost]
     [Authorize]
-    public IActionResult Olustur(EvOlusturViewModel model)
+    public async Task<IActionResult> Olustur(EvOlusturViewModel model, IFormFile imgFile)
     {
+        var extension = Path.GetExtension(imgFile.FileName);
+        var randomFileName = string.Format($"{Guid.NewGuid().ToString()}{extension}");
+        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img", randomFileName);
         if(ModelState.IsValid)
         {
+            using(var stream = new FileStream(path, FileMode.Create))
+            {
+                await imgFile.CopyToAsync(stream);
+            }
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             _evRepository.EvOlustur(
                 new Ev {
@@ -92,7 +99,7 @@ public class EvlerController : Controller
                     KullaniciId = int.Parse(userId 
                     ?? ""),
                     YayinlamaTarihi = DateTime.Now,
-                    Image = "1.jpg",
+                    Image = randomFileName,
                     AktifMi = false
                 }
             );
