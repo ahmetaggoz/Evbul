@@ -1,18 +1,23 @@
 ﻿@model List<Ev>
 
 
-<div class="card mb-3">
-    <div class="card-header">
-        <h5 class="card-title mb-0">Yeni Evler</h5>
-    </div>
-    <div class="card-body">
-        @foreach(var ev in Model)
+<div class="row">
+        @foreach (var ev in Model)
         {
-            <div class="mb-3">
-                <a href="/evler/detay/@ev.Url">
-                    <h6 class="mb-0">@ev.Baslik</h6>
-                </a>
+            <div class="col-3 p-2">
+
+                <div class="card" style="width: 18rem;">
+                    <img style="width: 18rem; height:15rem;" src="~/img/@ev.Image" class="card-img-top img-fluid" />
+
+                    <div class="card-body">
+                        <a href="/evler/detay/@ev.Url">
+                        <h5 class="fs-6"><a href="/evler/detay/@ev.Url" class="btn-link fw-bold">@ev.Baslik</a></h5>
+                        </a>
+
+                    </div>
+                </div>
             </div>
+           
         }
     </div>
 </div>

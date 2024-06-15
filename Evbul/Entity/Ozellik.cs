@@ -9,6 +9,7 @@ public class Ozellik
     public int OzellikId { get; set; }
     public string? Yazi { get; set; }
     public string? Url { get; set; }
+    public string? Icon { get; set; }
     public OzellikRenkleri? Renk { get; set; }
 
     public List<Ev> Evler { get; set; } = new List<Ev>();

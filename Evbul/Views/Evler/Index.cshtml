@@ -1,37 +1,28 @@
 ﻿@model EvViewModel
 
 <div class="row">
-    <div class="col-lg-8">
-        <div class="bg-white p-4">
-            <h1 class="h4 mb-4">Popüler evler</h1>
-            @foreach (var ev in Model.Evler)
-            {
-                <div class="card bg-transparent border-0 mb-3">
-                    <div class="row">
-                        <div class="col-4">
-                            <img src="~/img/@ev.Image" class="img-fluid rounded" />
-                        </div>
-                        <div class="col-8">
-                            <h5><a href="/evler/detay/@ev.Url" class="btn-link fw-bold">@ev.Baslik</a></h5>
-                            <p>@ev.Aciklama</p>
-                            <p>Fiyat: @ev.Fiyat</p>
-                            <p>Yatak Odası: @ev.YatakOdasi</p>
-                            <p>Yatak Sayısı: @ev.YatakSayisi</p>
-
-                        </div>
-                    </div>
-                </div>
-                <hr class="my-3">
-            }
-            
-        </div>
-    </div>
+    <vc:ozellikler-menu></vc:ozellikler-menu>
 
     
+            @foreach (var ev in Model.Evler)
+            {
+                       
 
+                            <div class="col-3 p-2">
 
-    <div class="col-lg-4">
-        <vc:ozellikler-menu></vc:ozellikler-menu>
-        <vc:yeni-evler></vc:yeni-evler>
-    </div>
+                            <div class="card" style="width: 18rem;">
+                                    <img style="width: 18rem; height:15rem;" src="~/img/@ev.Image" class="card-img-top img-fluid" />
+
+                                <div class="card-body">
+
+                                    <h5 class="fs-6"><a href="/evler/detay/@ev.Url" class="btn-link fw-bold">@ev.Baslik</a></h5>
+
+                                </div>
+                            </div>
+                            </div>
+            }
+
+    <hr class="my-2">
+    <h5>En Yeni Yayınlar</h5>
+    <vc:yeni-evler></vc:yeni-evler>
 </div>

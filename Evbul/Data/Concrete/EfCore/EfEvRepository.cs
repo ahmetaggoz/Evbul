@@ -1,5 +1,6 @@
 ﻿using Evbul.Data.Abstract;
 using Evbul.Entity;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
 namespace Evbul.Data.Concrete.EfCore;
@@ -13,9 +14,20 @@ public class EfEvRepository : IEvRepository
     }
     public IQueryable<Ev> Evler => _context.Evler;
 
+    public void Delete(Ev ev)
+    {
+        var entity = _context.Evler.FirstOrDefault(u => u.EvId == ev.EvId);
+        if(entity != null)
+        {
+            _context.Evler.Remove(entity);
+            _context.SaveChanges();
+        }
+        
+    }
+
     public void EditEv(Ev ev)
     {
-        var entity = _context.Evler.FirstOrDefault(e => ev.EvId == ev.EvId);
+        var entity = _context.Evler.FirstOrDefault(e => e.EvId == ev.EvId);
 
         if(entity != null)
         {

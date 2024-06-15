@@ -102,6 +102,7 @@ public class EvlerController : Controller
                     YatakSayisi = model.YatakSayisi,
                     Banyo = model.Banyo,
                     Fiyat = model.Fiyat,
+                    Url = model.Url,
                     KullaniciId = int.Parse(userId 
                     ?? ""),
                     YayinlamaTarihi = DateTime.Now,
@@ -187,5 +188,17 @@ public class EvlerController : Controller
         }
         ViewBag.Ozellikler = _ozellikRepository.Ozellikler.ToList();
         return View(model);
+    }
+
+    public IActionResult Delete(int? id)
+    {
+       
+        var entity = _evRepository.Evler.FirstOrDefault(u => u.EvId == id);
+        if(entity != null)
+        {
+            _evRepository.Delete(entity);
+
+        }
+        return RedirectToAction("List");
     }
 }
