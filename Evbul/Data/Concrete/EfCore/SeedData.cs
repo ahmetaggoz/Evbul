@@ -22,18 +22,18 @@ public static class SeedData
                     new Entity.Ozellik { Yazi = "Dağ Bisikleti", Url = "dag-bisikleti", Renk = OzellikRenkleri.secondary, Icon = "bicycle"},
                     new Entity.Ozellik { Yazi = "Güneşli", Url = "gunesli", Renk = OzellikRenkleri.success, Icon = "brightness-alt-high"},
                     new Entity.Ozellik { Yazi = "Açık Hava", Url = "acik-hava", Renk = OzellikRenkleri.primary, Icon = "cloud-moon-fill"},
-                    new Entity.Ozellik { Yazi = "Bütçe Dostu", Url = "butce-dostu", Renk = OzellikRenkleri.primary, Icon = "coin"},
-                    new Entity.Ozellik { Yazi = "Manzaralı", Url = "manzarali", Renk = OzellikRenkleri.primary, Icon = "file-image-fill"},
-                    new Entity.Ozellik { Yazi = "Turistik", Url = "turistik", Renk = OzellikRenkleri.primary, Icon = "globe-central-south-asia"}
+                    new Entity.Ozellik { Yazi = "Bütçe Dostu", Url = "butce-dostu", Renk = OzellikRenkleri.danger, Icon = "coin"},
+                    new Entity.Ozellik { Yazi = "Manzaralı", Url = "manzarali", Renk = OzellikRenkleri.success, Icon = "file-image-fill"},
+                    new Entity.Ozellik { Yazi = "Turistik", Url = "turistik", Renk = OzellikRenkleri.warning, Icon = "globe-central-south-asia"}
                     ,
                     new Entity.Ozellik { Yazi = "Balayı", Url = "balayı", Renk = OzellikRenkleri.primary, Icon = "hearts"} ,
-                    new Entity.Ozellik { Yazi = "Yıldızlı Gökyüzü", Url = "yildizli-gokyuzu", Renk = OzellikRenkleri.primary, Icon = "moon-stars"},
+                    new Entity.Ozellik { Yazi = "Yıldızlı Gökyüzü", Url = "yildizli-gokyuzu", Renk = OzellikRenkleri.danger, Icon = "moon-stars"},
                     new Entity.Ozellik { Yazi = "Kar Tatili", Url = "kar-tatili", Renk = OzellikRenkleri.primary, Icon = "snow2"},
-                    new Entity.Ozellik { Yazi = "Havalimanı", Url = "havalimani", Renk = OzellikRenkleri.primary, Icon = "airplane-fill"}
+                    new Entity.Ozellik { Yazi = "Havalimanı", Url = "havalimani", Renk = OzellikRenkleri.secondary, Icon = "airplane-fill"}
                     ,
-                    new Entity.Ozellik { Yazi = "Ödüllü", Url = "odullu", Renk = OzellikRenkleri.primary, Icon = "award-fill"}
+                    new Entity.Ozellik { Yazi = "Ödüllü", Url = "odullu", Renk = OzellikRenkleri.warning, Icon = "award-fill"}
                      ,
-                    new Entity.Ozellik { Yazi = "Sinema", Url = "sinema", Renk = OzellikRenkleri.primary, Icon = "badge-8k"}
+                    new Entity.Ozellik { Yazi = "Sinema", Url = "sinema", Renk = OzellikRenkleri.danger, Icon = "badge-8k"}
                     ,
                     new Entity.Ozellik { Yazi = "Tarihi", Url = "tarihi", Renk = OzellikRenkleri.primary, Icon = "bank"}
                 );
@@ -62,7 +62,7 @@ public static class SeedData
                         YayinlamaTarihi = DateTime.Now.AddDays(-10),
                         KullaniciId = 1,
                         Aciklama = "Şovalye adasındaki evimiz, etkileyici deniz, körfez ve doğa manzaralarıyla benzersiz bir konaklama deneyimi sunuyor.",
-                        Ozellikler = context.Ozellikler.Take(9).ToList(),
+                        Ozellikler = context.Ozellikler.Take(15).ToList(),
                         Image = "1.jpg",
                         Yorumlar = new List<Yorum> {
                             new Yorum { Yazi = "huzur dolu bir tatil geçirdim", Tarih = DateTime.Now.AddDays(-10), KullaniciId = 1 },
@@ -81,7 +81,7 @@ public static class SeedData
                         YayinlamaTarihi = DateTime.Now.AddDays(-20),
                         KullaniciId = 1,
                         Aciklama = "Villa, Mikonos'un güneybatı tarafında, Lia plajına kadar yer almaktadır. Dinlendirici bir tatil için ideal.",
-                        Ozellikler = context.Ozellikler.Take(8).ToList(),
+                        Ozellikler = context.Ozellikler.Take(15).ToList(),
                         Image = "2.jpg"
                     },
                     new Entity.Ev {
@@ -186,7 +186,7 @@ public static class SeedData
                         YayinlamaTarihi = DateTime.Now.AddDays(-5),
                         KullaniciId = 2,
                         Aciklama = "Tüm odalarda tam deniz manzaralı 2 yatak odası tasarımcı villa.Özel plaja, havuzlara ücretsiz erişim.",
-                        Ozellikler = context.Ozellikler.Take(6).ToList(),
+                        Ozellikler = context.Ozellikler.Take(15).ToList(),
                         Image = "105.jpg"
                     },
                     new Entity.Ev {
@@ -216,7 +216,7 @@ public static class SeedData
                         YayinlamaTarihi = DateTime.Now.AddDays(-5),
                         KullaniciId = 2,
                         Aciklama = "Tüm odalarda tam deniz manzaralı 2 yatak odası tasarımcı villa.Özel plaja, havuzlara ücretsiz erişim.",
-                        Ozellikler = context.Ozellikler.Take(6).ToList(),
+                        Ozellikler = context.Ozellikler.Take(15).ToList(),
                         Image = "107.jpg"
                     },
                     new Entity.Ev {

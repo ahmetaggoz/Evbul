@@ -13,10 +13,30 @@
             </div>
 
             <img src="~/img/@Model.Image" class="img-fluid rounded" />
-            <ul class="list-inline my-3">
-                <li class="list-inline-item"><i class="bi bi-calender"></i> @Model.YayinlamaTarihi.ToString("d")</li>
-                <li class="list-inline-item"><i class="bi bi-person-circle"></i> <a href="/profile/@Model.Kullanici.KullaniciAd"> @Model.Kullanici.Ad </a></li>
-            </ul>
+            
+            <div class="mt-4">
+                <ul class="d-inline-flex">
+                    <li>Misafir: @Model.Kapasite</li>
+                    <li class="ms-4">Yatak Odası: @Model.YatakOdasi</li>
+                    <li class="ms-4">Yatak Sayısı: @Model.YatakSayisi</li>
+                    <li class="ms-4">Banyo: @Model.Banyo</li>
+                    <li class="ms-4">Fiyat: $@Model.Fiyat</li>
+                </ul>
+                
+            </div>
+            <hr>
+            <div class="d-flex align-items-center">
+                    <img src="/img/@Model.Kullanici.Image" style="width: 40px; height:40px;border-radius:50%;" class="img-fluid me-3">
+                    <div class="d-flex flex-column ">
+                    <div class="mt-3">
+                        <span>Ev Sahibi: </span>
+                        <a href="/profile/@Model.Kullanici.KullaniciAd"> @Model.Kullanici.Ad </a>
+                    </div>
+                    <div>
+                        <p>Yayınlanma Tarihi: @Model.YayinlamaTarihi.ToString("d")</p>
+                    </div>
+                    </div>
+            </div>
             <hr class="py-3">
             <div>@Html.Raw(@Model.Aciklama)</div>
         </div>
@@ -72,7 +92,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-4">
+    <div cass="lcol-lg-4">
 
     </div>
 </div>
