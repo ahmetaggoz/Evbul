@@ -1,15 +1,49 @@
 ﻿@model List<Ozellik>
 
 
-
-            <div class="d-inline mb-3  p-4">
-            @foreach (var ozellik in Model)
-            {
-                <a id="ozellik" href="/evler/ozellik/@ozellik.Url" class="btn btn-sm">
-                <div class="d-inline-flex flex-column">
-                    <i style="font-size: 2rem;" class="bi bi-@ozellik.Icon text-center"></i>
-                    <p>@ozellik.Yazi</p>
-                </div>
-                </a>
-            }
+<div class="page-heading header-text">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <span class="breadcrumb"><a href="/">Anasayfa</a> / Özellikler</span>
+                <h3>Özellikler</h3>
             </div>
+        </div>
+    </div>
+</div>
+
+  <div class="section properties">
+    <div class="container">
+      <ul class="properties-filter">
+        <li>
+          <a class="is_active" href="#!" data-filter="*">Hepsi</a>
+        </li>
+        @foreach (var ozellik in Model)
+        {
+            <li>
+            <a id="ozellik" href="/evler/ozellik/@ozellik.Url" data-filter=".adv">@ozellik.Yazi</a>
+            </li>
+
+        }
+        
+        @* <li>
+          <a href="#!" data-filter=".str">Villa House</a>
+        </li>
+        <li>
+          <a href="#!" data-filter=".rac">Penthouse</a>
+        </li> *@
+      </ul>
+    </div>
+  </div>
+
+@* <div class="d-inline mb-3  p-4">
+    @foreach (var ozellik in Model)
+    {
+        <a id="ozellik" href="/evler/ozellik/@ozellik.Url" class="btn btn-sm">
+            <div class="d-inline-flex flex-column">
+                <i style="font-size: 2rem;" class="bi bi-@ozellik.Icon text-center"></i>
+                <p>@ozellik.Yazi</p>
+            </div>
+        </a>
+    }
+</div> *@

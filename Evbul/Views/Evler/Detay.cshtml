@@ -1,101 +1,220 @@
 ﻿@model Ev
 
-<div class="row">
-    <div class="col-lg-8">
-        <div class="bg-white p-4">
-            <h1 class="h4 mb-4">@Model.Baslik</h1>
-            <div class="ozellikler">
-                @foreach (var ozellik in Model.Ozellikler)
-                {
-                    <a href="/evler/ozellik/@ozellik.Url"
-                        class="badge bg-@ozellik.Renk bg-opacity-10 text-@ozellik.Renk mb-2 fw-bold">@ozellik.Yazi</a>
-                }
-            </div>
-
-            <img src="~/img/@Model.Image" class="img-fluid rounded" />
-            
-            <div class="mt-4">
-                <ul class="d-inline-flex">
-                    <li>Misafir: @Model.Kapasite</li>
-                    <li class="ms-4">Yatak Odası: @Model.YatakOdasi</li>
-                    <li class="ms-4">Yatak Sayısı: @Model.YatakSayisi</li>
-                    <li class="ms-4">Banyo: @Model.Banyo</li>
-                    <li class="ms-4">Fiyat: $@Model.Fiyat</li>
-                </ul>
-                
-            </div>
-            <hr>
-            <div class="d-flex align-items-center">
-                    <img src="/img/@Model.Kullanici.Image" style="width: 40px; height:40px;border-radius:50%;" class="img-fluid me-3">
-                    <div class="d-flex flex-column ">
-                    <div class="mt-3">
-                        <span>Ev Sahibi: </span>
-                        <a href="/profile/@Model.Kullanici.KullaniciAd"> @Model.Kullanici.Ad </a>
-                    </div>
-                    <div>
-                        <p>Yayınlanma Tarihi: @Model.YayinlamaTarihi.ToString("d")</p>
-                    </div>
-                    </div>
-            </div>
-            <hr class="py-3">
-            <div>@Html.Raw(@Model.Aciklama)</div>
-        </div>
-        <div class="bg-white mt-3">
-            <div class="card border-0">
-                <div class="card-header pb-0">
-                    <h4><span id="yorumSayisi"> @Model.Yorumlar.Count</span> adet yorum</h4>
-                </div>
-                <div class="card-body">
-                    <div id="yorumlar">
-                        @foreach (var yorum in Model.Yorumlar)
-                        {
-                            <div class="my-4 d-flex">
-                                <img src="/img/@yorum.Kullanici.Image" alt=""
-                                    class="avatar rounded-circle float-start me-3">
-                                <div>
-                                    <div class="mb-2 d-flex">
-                                        <h6 class="me-2">
-                                            <a href="/profile/@yorum.Kullanici.KullaniciAd"> @yorum.Kullanici.Ad </a>
-                                         
-                                        </h6>
-                                        <small>@yorum.Tarih.ToString("d")</small>
-                                    </div>
-                                    <p>@yorum.Yazi</p>
-                                </div>
-                            </div>
-                        }
-                    </div>
-                    @if (User.Identity!.IsAuthenticated)
-                    {
-                        <hr class="my-4">
-                        <div>
-                            <h4 class="mb-3">Yorum Ekle</h4>
-                            <form action="/evler/YorumEkle" method="post">
-                                <input type="hidden" id="EvId" name="EvId" value="@Model.EvId">
-
-                                <div class="mb-3">
-                                    <label class="form-label" for="Yazi">Yorum</label>
-                                    <textarea rows="3" type="text" name="Yazi" id="Yazi" class="form-control"></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <button id="btnYorumKayit" type="submit" class="btn btn-primary">Kaydet</button>
-                                </div>
-                            </form>
-                        </div>
-                    }
-                    else
-                    {
-                        <p>Yorum için uygulamaya giriş yapmalısınız <a href="/kullanicilar/giris">Giriş</a> </p>
-                    }
-
-                </div>
+<div class="page-heading header-text">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <span class="breadcrumb"><a href="/">Anasayfa</a> / Evin Özellikleri</span>
+                <h3>Evin Özellikleri</h3>
             </div>
         </div>
-    </div>
-    <div cass="lcol-lg-4">
-
     </div>
 </div>
+
+<div class="single-property section">
+    <div class="container">
+        @foreach (var ozellik in Model.Ozellikler)
+        {
+
+            <div class="row">
+                <div class="col-lg-8">
+
+                    <div class="main-image">
+                        <img src="~/img/@Model.Image" alt="">
+                    </div>
+                    <div class="main-content">
+                        <span class="category">@ozellik.Yazi</span>
+                        <h4>@Model.Adres</h4>
+                        <p>@Html.Raw(@Model.Aciklama)</p>
+                    </div>
+
+                </div>
+                <div class="col-lg-4">
+                    <div class="info-table">
+                        <ul>
+                            <li>
+                                <img src="/img/info-icon-01.png" alt="" style="max-width: 52px;">
+                                <h4>@Model.Metrekare m2<br><span>Toplam Daire Alanı</span></h4>
+                            </li>
+                            <li>
+                                <img src="/img/info-icon-02.png" alt="" style="max-width: 52px;">
+                                <h4>Sözleşme<br><span>Sözleşme Hazır</span></h4>
+                            </li>
+                            <li>
+                                <img src="/img/info-icon-03.png" alt="" style="max-width: 52px;">
+                                <h4>Ödeme<br><span>Ödeme İşlemleri</span></h4>
+                            </li>
+                            <li>
+                                <img src="/img/info-icon-04.png" alt="" style="max-width: 52px;">
+                                <h4>Güvenlik<br><span>24/7 Kontrol Altında</span></h4>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="d-flex align-items-center">
+            <img src="/img/@Model.Kullanici.Image" style="width: 40px; height:40px;border-radius:50%;"
+                class="img-fluid me-3">
+            <div class="d-flex flex-column ">
+                <div class="mt-3">
+                    <span>Ev Sahibi: </span>
+                    <a href="/profile/@Model.Kullanici.KullaniciAd"> @Model.Kullanici.Ad </a>
+                </div>
+                <div>
+                    <p>Yayınlanma Tarihi: @Model.YayinlamaTarihi.ToString("d")</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4">
+            <ul class="d-inline-flex">
+                <li>Misafir: @Model.Kapasite</li>
+                <li class="ms-4">Yatak Odası: @Model.YatakOdasi</li>
+                <li class="ms-4">Yatak Sayısı: @Model.YatakSayisi</li>
+                <li class="ms-4">Banyo: @Model.Banyo</li>
+                <li class="ms-4">Fiyat: $@Model.Fiyat</li>
+            </ul>
+
+        </div>
+        @foreach (var yorum in Model.Yorumlar)
+        {
+            <div class="my-4 d-flex">
+                <img src="/img/@yorum.Kullanici.Image" alt="" class="avatar rounded-circle float-start me-3">
+                <div>
+                    <div class="mb-2 d-flex">
+                        <h6 class="me-2">
+                            <a href="/profile/@yorum.Kullanici.KullaniciAd"> @yorum.Kullanici.Ad </a>
+
+                        </h6>
+                        <small>@yorum.Tarih.ToString("d")</small>
+                    </div>
+                    <p>@yorum.Yazi</p>
+                </div>
+            </div>
+        }
+
+        @if (User.Identity!.IsAuthenticated)
+        {
+            <hr class="my-4">
+            <div>
+                <h4 class="mb-3">Yorum Ekle</h4>
+                <form action="/evler/YorumEkle" method="post">
+                    <input type="hidden" id="EvId" name="EvId" value="@Model.EvId">
+
+                    <div class="mb-3">
+                        <label class="form-label" for="Yazi">Yorum</label>
+                        <textarea rows="3" type="text" name="Yazi" id="Yazi" class="form-control"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <button id="btnYorumKayit" type="submit" class="btn btn-primary">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        }
+        else
+        {
+            <p>Yorum için uygulamaya giriş yapmalısınız <a href="/kullanicilar/giris">Giriş</a> </p>
+        }
+    </div>
+</div>
+
+
+@* <div class="row">
+<div class="col-lg-8">
+<div class="bg-white p-4">
+<h1 class="h4 mb-4">@Model.Baslik</h1>
+<div class="ozellikler">
+@foreach (var ozellik in Model.Ozellikler)
+{
+<a href="/evler/ozellik/@ozellik.Url"
+class="badge bg-@ozellik.Renk bg-opacity-10 text-@ozellik.Renk mb-2 fw-bold">@ozellik.Yazi</a>
+}
+</div>
+
+<img src="~/img/@Model.Image" class="img-fluid rounded" />
+
+<div class="mt-4">
+<ul class="d-inline-flex">
+<li>Misafir: @Model.Kapasite</li>
+<li class="ms-4">Yatak Odası: @Model.YatakOdasi</li>
+<li class="ms-4">Yatak Sayısı: @Model.YatakSayisi</li>
+<li class="ms-4">Banyo: @Model.Banyo</li>
+<li class="ms-4">Fiyat: $@Model.Fiyat</li>
+</ul>
+
+</div>
+<hr>
+<div class="d-flex align-items-center">
+<img src="/img/@Model.Kullanici.Image" style="width: 40px; height:40px;border-radius:50%;" class="img-fluid me-3">
+<div class="d-flex flex-column ">
+<div class="mt-3">
+<span>Ev Sahibi: </span>
+<a href="/profile/@Model.Kullanici.KullaniciAd"> @Model.Kullanici.Ad </a>
+</div>
+<div>
+<p>Yayınlanma Tarihi: @Model.YayinlamaTarihi.ToString("d")</p>
+</div>
+</div>
+</div>
+<hr class="py-3">
+<div>@Html.Raw(@Model.Aciklama)</div>
+</div>
+<div class="bg-white mt-3">
+<div class="card border-0">
+<div class="card-header pb-0">
+<h4><span id="yorumSayisi"> @Model.Yorumlar.Count</span> adet yorum</h4>
+</div>
+<div class="card-body">
+<div id="yorumlar">
+@foreach (var yorum in Model.Yorumlar)
+{
+<div class="my-4 d-flex">
+<img src="/img/@yorum.Kullanici.Image" alt=""
+class="avatar rounded-circle float-start me-3">
+<div>
+<div class="mb-2 d-flex">
+<h6 class="me-2">
+<a href="/profile/@yorum.Kullanici.KullaniciAd"> @yorum.Kullanici.Ad </a>
+
+</h6>
+<small>@yorum.Tarih.ToString("d")</small>
+</div>
+<p>@yorum.Yazi</p>
+</div>
+</div>
+}
+</div>
+@if (User.Identity!.IsAuthenticated)
+{
+<hr class="my-4">
+<div>
+<h4 class="mb-3">Yorum Ekle</h4>
+<form action="/evler/YorumEkle" method="post">
+<input type="hidden" id="EvId" name="EvId" value="@Model.EvId">
+
+<div class="mb-3">
+<label class="form-label" for="Yazi">Yorum</label>
+<textarea rows="3" type="text" name="Yazi" id="Yazi" class="form-control"></textarea>
+</div>
+<div class="mb-3">
+<button id="btnYorumKayit" type="submit" class="btn btn-primary">Kaydet</button>
+</div>
+</form>
+</div>
+}
+else
+{
+<p>Yorum için uygulamaya giriş yapmalısınız <a href="/kullanicilar/giris">Giriş</a> </p>
+}
+
+</div>
+</div>
+</div>
+</div>
+<div cass="lcol-lg-4">
+
+</div>
+</div> *@
 
 
 @section Scripts
@@ -117,17 +236,17 @@
                     success: function (yorum) {
                         var date = new Date(yorum.tarih);
                         $("#yorumlar").append(`
-                                <div class="my-4 d-flex">
-                                    <img src="/img/${yorum.avatar}" alt="" class="avatar rounded-circle float-start me-3">
-                                    <div>
-                                        <div class="mb-2 d-flex">
-                                            <h6 class="me-2">${yorum.username}</h6>
-                                            <small>${date.toLocaleDateString()}</small>
+                                    <div class="my-4 d-flex">
+                                        <img src="/img/${yorum.avatar}" alt="" class="avatar rounded-circle float-start me-3">
+                                        <div>
+                                            <div class="mb-2 d-flex">
+                                                <h6 class="me-2">${yorum.username}</h6>
+                                                <small>${date.toLocaleDateString()}</small>
+                                            </div>
+                                            <p>${yorum.yazi}</p>
                                         </div>
-                                        <p>${yorum.yazi}</p>
                                     </div>
-                                </div>
-                            `);
+                                `);
                         $("#KullaniciAd").val('');
                         $("#Yazi").val('');
 

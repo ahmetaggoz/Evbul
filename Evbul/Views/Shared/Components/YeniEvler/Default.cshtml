@@ -1,7 +1,35 @@
 ﻿@model List<Ev>
 
 
-<div class="row">
+
+<div class="section properties">
+    <div class="container">
+    <div class="row properties-box">
+        @foreach (var ev in Model){
+
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
+          <div class="item">
+            <a href="/evler/detay/@ev.Url"><img src="~/img/@ev.Image" alt=""></a>
+            <span class="category">@ev.Baslik</span>
+            <h6>$@ev.Fiyat</h6>
+            <h4><a href="/evler/detay/@ev.Url">@ev.Adres</a></h4>
+            <ul>
+              <li>Yatak Odası: <span>@ev.YatakOdasi</span></li>
+              <li>Banyo: <span>@ev.Banyo</span></li>
+              <li>Metrekare: <span>@ev.Metrekare</span></li>
+              <li>Kat: <span>@ev.Kat</span></li>
+              <li>Park: <span>@ev.Park bölme</span></li>
+            </ul>
+            <div class="main-button">
+              <a href="/evler/detay/@ev.Url">Evi Ziyaret Et</a>
+            </div>
+          </div>
+        </div>
+        }
+    </div>
+    </div>
+    </div>
+@* <div class="row">
         @foreach (var ev in Model)
         {
             <div class="col-3 p-2">
@@ -20,5 +48,4 @@
             </div>
            
         }
-    </div>
-</div>
+</div> *@

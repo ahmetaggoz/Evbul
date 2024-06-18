@@ -6,10 +6,14 @@ public class Ev
     public string? Baslik { get; set; }
     public string? Image { get; set; }
     public string? Url { get; set; }
+    public string? Adres { get; set; }
     public int Kapasite { get; set; }
     public int YatakOdasi { get; set; }
     public int YatakSayisi { get; set; }
     public int Banyo { get; set; }
+    public int Metrekare { get; set; }
+    public int Kat { get; set; }
+    public int Park { get; set; }
     public int Fiyat { get; set; }
     public bool AktifMi { get; set; }
     public DateTime YayinlamaTarihi { get; set; }

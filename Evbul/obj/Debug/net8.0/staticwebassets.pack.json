@@ -1,8 +1,28 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\css\\animate.css",
+      "PackagePath": "staticwebassets\\css\\animate.css"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\css\\flex-slider.css",
+      "PackagePath": "staticwebassets\\css\\flex-slider.css"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\css\\fontawesome.css",
+      "PackagePath": "staticwebassets\\css\\fontawesome.css"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\css\\owl.css",
+      "PackagePath": "staticwebassets\\css\\owl.css"
+    },
+    {
       "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\css\\templatemo-villa-agency.css",
+      "PackagePath": "staticwebassets\\css\\templatemo-villa-agency.css"
     },
     {
       "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\1.jpg",
@@ -113,12 +133,40 @@
       "PackagePath": "staticwebassets\\img\\bad6e831-53f4-4e03-9a13-8e4a09d06e4c.jpeg"
     },
     {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\banner-01.jpg",
+      "PackagePath": "staticwebassets\\img\\banner-01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\banner-02.jpg",
+      "PackagePath": "staticwebassets\\img\\banner-02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\banner-03.jpg",
+      "PackagePath": "staticwebassets\\img\\banner-03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\contact-bg.jpg",
+      "PackagePath": "staticwebassets\\img\\contact-bg.jpg"
+    },
+    {
       "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\d2378d48-7ecf-4f90-9514-f05b732456b0.jpeg",
       "PackagePath": "staticwebassets\\img\\d2378d48-7ecf-4f90-9514-f05b732456b0.jpeg"
     },
     {
       "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\d41fc421-1534-476a-8f64-b9ca9746bb20.jpg",
       "PackagePath": "staticwebassets\\img\\d41fc421-1534-476a-8f64-b9ca9746bb20.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\deal-01.jpg",
+      "PackagePath": "staticwebassets\\img\\deal-01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\deal-02.jpg",
+      "PackagePath": "staticwebassets\\img\\deal-02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\deal-03.jpg",
+      "PackagePath": "staticwebassets\\img\\deal-03.jpg"
     },
     {
       "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\eaddf4a7-fa59-41e6-9b20-4e82bb1212c4.jpeg",
@@ -129,12 +177,84 @@
       "PackagePath": "staticwebassets\\img\\ed7a004f-d641-4e64-baca-eadce61543e1.jpeg"
     },
     {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\email-icon.png",
+      "PackagePath": "staticwebassets\\img\\email-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\featured-icon.png",
+      "PackagePath": "staticwebassets\\img\\featured-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\featured.jpg",
+      "PackagePath": "staticwebassets\\img\\featured.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\info-icon-01.png",
+      "PackagePath": "staticwebassets\\img\\info-icon-01.png"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\info-icon-02.png",
+      "PackagePath": "staticwebassets\\img\\info-icon-02.png"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\info-icon-03.png",
+      "PackagePath": "staticwebassets\\img\\info-icon-03.png"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\info-icon-04.png",
+      "PackagePath": "staticwebassets\\img\\info-icon-04.png"
+    },
+    {
       "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\p1.jpg",
       "PackagePath": "staticwebassets\\img\\p1.jpg"
     },
     {
       "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\p2.jpg",
       "PackagePath": "staticwebassets\\img\\p2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\page-heading-bg.jpg",
+      "PackagePath": "staticwebassets\\img\\page-heading-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\phone-icon.png",
+      "PackagePath": "staticwebassets\\img\\phone-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\property-01.jpg",
+      "PackagePath": "staticwebassets\\img\\property-01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\property-02.jpg",
+      "PackagePath": "staticwebassets\\img\\property-02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\property-03.jpg",
+      "PackagePath": "staticwebassets\\img\\property-03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\property-04.jpg",
+      "PackagePath": "staticwebassets\\img\\property-04.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\property-05.jpg",
+      "PackagePath": "staticwebassets\\img\\property-05.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\property-06.jpg",
+      "PackagePath": "staticwebassets\\img\\property-06.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\single-property.jpg",
+      "PackagePath": "staticwebassets\\img\\single-property.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\video-bg.jpg",
+      "PackagePath": "staticwebassets\\img\\video-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\img\\video-frame.jpg",
+      "PackagePath": "staticwebassets\\img\\video-frame.jpg"
     },
     {
       "Id": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\wwwroot\\lib\\bootstrap-icons\\bootstrap-icons.svg",

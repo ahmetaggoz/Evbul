@@ -38,7 +38,9 @@ public class EvlerController : Controller
         return View(
             new EvViewModel
             {
-                Evler = await evler.Include(u => u.Kullanici).ToListAsync()
+                Evler = await evler
+                .Include(o => o.Ozellikler) 
+                .Include(u => u.Kullanici).ToListAsync()
                 
             }
         );
