@@ -160,12 +160,18 @@
                         </div>
                         <div class="form-group">
                             <label asp-for="Eposta" class="form-control-label">E-POSTA</label>
-                            <input asp-for="Eposta" type="text" class="form-control">
+                            <input asp-for="Eposta"  class="form-control">
                             <span asp-validation-for="Eposta" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="Parola" class="form-control-label">PAROLA</label>
-                            <input asp-for="Parola" type="password" class="form-control" i>
+                            <input asp-for="Parola"  class="form-control" i>
+                            <span asp-validation-for="Parola" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ParolaDogrula" class="form-control-label">PAROLA TEKRAR</label>
+                            <input asp-for="ParolaDogrula"  class="form-control" i>
+                            <span asp-validation-for="ParolaDogrula" class="text-danger"></span>
                         </div>
 
                         <div class="col-lg-12 loginbttm">
