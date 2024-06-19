@@ -9,63 +9,63 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Evbul
 build_property.RootNamespace = Evbul
-build_property.ProjectDir = C:\Users\ahmet\OneDrive\Masaüstü\Bitirme Projem\aspnetcore\Evbul\Evbul\
+build_property.ProjectDir = c:\Users\ahmet\OneDrive\Masaüstü\Bitirme Projem\aspnetcore\Evbul\Evbul\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\ahmet\OneDrive\Masaüstü\Bitirme Projem\aspnetcore\Evbul\Evbul
+build_property.MSBuildProjectDirectory = c:\Users\ahmet\OneDrive\Masaüstü\Bitirme Projem\aspnetcore\Evbul\Evbul
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Evler/Detay.cshtml]
+[c:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Evler/Detay.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZsZXJcRGV0YXkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Evler/Edit.cshtml]
+[c:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Evler/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZsZXJcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Evler/Index.cshtml]
+[c:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Evler/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZsZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Evler/List.cshtml]
+[c:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Evler/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZsZXJcTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Evler/Olustur.cshtml]
+[c:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Evler/Olustur.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZsZXJcT2x1c3R1ci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Kullanicilar/Giris.cshtml]
+[c:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Kullanicilar/Giris.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpbGFyXEdpcmlzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Kullanicilar/Kayit.cshtml]
+[c:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Kullanicilar/Kayit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpbGFyXEtheWl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Kullanicilar/Profile.cshtml]
+[c:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Kullanicilar/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpbGFyXFByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Shared/Components/OzelliklerMenu/Default.cshtml]
+[c:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Shared/Components/OzelliklerMenu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcT3plbGxpa2xlck1lbnVcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Shared/Components/YeniEvler/Default.cshtml]
+[c:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Shared/Components/YeniEvler/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcWWVuaUV2bGVyXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Shared/_Layout.cshtml]
+[c:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/_ViewImports.cshtml]
+[c:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/_ViewStart.cshtml]
+[c:/Users/ahmet/OneDrive/Masaüstü/Bitirme Projem/aspnetcore/Evbul/Evbul/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

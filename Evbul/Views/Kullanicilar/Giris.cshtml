@@ -1,94 +1,184 @@
-﻿@model GirisViewModel
+﻿@model GirisViewModel 
+<style>
+ body {
+    background: #222D32;
+    font-family: 'Roboto', sans-serif;
+}
 
-<script  src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="  crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" ></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<script>
-		$(document).ready(function(){
-    $(".veen .rgstr-btn button").click(function(){
-        $('.veen .wrapper').addClass('move');
-        $('.body').css('background','#e0b722');
-        $(".veen .login-btn button").removeClass('active');
-        $(this).addClass('active');
+.login-box {
+    margin-top: 75px;
+    height: auto;
+    background: #1A2226;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
 
-    });
-    $(".veen .login-btn button").click(function(){
-        $('.veen .wrapper').removeClass('move');
-        $('.body').css('background','#ff4931');
-        $(".veen .rgstr-btn button").removeClass('active');
-        $(this).addClass('active');
-    });
-});
-	</script>
-<div class="body">
-		<div class="veen">
-			<div class="login-btn splits">
-				<p>Zaten Hesabınız Var Mı?</p>
-				<button class="active">Giriş</button>
-			</div>
-			<div class="rgstr-btn splits">
-				<p>Hesabınız Yok Mu?</p>
-				<button>Kayıt</button>
-			</div>
-			<div class="wrapper">
-				<form asp-for="Giris" method="post" id="login" tabindex="500">
-					<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-					<h3>Giriş</h3>
-					<div class="mail">
-						<input asp-for="Eposta">
-						<label asp-for="Eposta">Eposta</label>
-						<span asp-validation-for="Eposta" class="text-danger"></span>
-					</div>
-					<div class="passwd">
-						<input asp-for="Parola">
-						<label asp-for="Parola">Parola</label>
-						<span asp-validation-for="Parola" class="text-danger"></span>
-					</div>
-					<div >
-						<button type="submit" class="dark">Giriş</button>
-					</div>
-				</form>
-				<form asp-for="Kayit" id="register" tabindex="502">
-					<h3>Kayıt</h3>
-					<div class="name">
-						<input type="text" name="">
-						<label>Ad Soyad</label>
-					</div>
-					<div class="mail">
-						<input type="mail" name="">
-						<label>Eposta</label>
-					</div>
-					<div class="uid">
-						<input type="text" name="">
-						<label>Kullanıcı Adı</label>
-					</div>
-					<div class="passwd">
-						<input type="password" name="">
-						<label>Parola</label>
-					</div>
-					<div class="submit">
-						<button class="dark">Kayıt</button>
-					</div>
-				</form>
-			</div>
-		</div>	
+.login-key {
+    height: 100px;
+    font-size: 80px;
+    line-height: 100px;
+    background: -webkit-linear-gradient(#27EF9F, #0DB8DE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login-title {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #ECF0F5;
+}
+
+.login-form {
+    margin-top: 25px;
+    text-align: left;
+}
+
+input[type=text] {
+    background-color: #1A2226;
+    border: none;
+    border-bottom: 2px solid #0DB8DE;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 20px;
+    padding-left: 0px;
+    color: #ECF0F5;
+}
+
+input[type=password] {
+    background-color: #1A2226;
+    border: none;
+    border-bottom: 2px solid #0DB8DE;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    padding-left: 0px;
+    margin-bottom: 20px;
+    color: #ECF0F5;
+}
+
+.form-group {
+    margin-bottom: 40px;
+    outline: 0px;
+}
+
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 2px solid #0DB8DE;
+    outline: 0;
+    background-color: #1A2226;
+    color: #ECF0F5;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0;
+}
+
+label {
+    margin-bottom: 0px;
+}
+
+.form-control-label {
+    font-size: 10px;
+    color: #6C6C6C;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.btn-outline-primary {
+    border-color: #0DB8DE;
+    color: #0DB8DE;
+    border-radius: 0px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.btn-outline-primary:hover {
+    background-color: #0DB8DE;
+    right: 0px;
+}
+
+.login-btm {
+    float: left;
+}
+
+.login-button {
+    padding-right: 0px;
+    text-align: right;
+    margin-bottom: 25px;
+}
+
+.login-text {
+    text-align: left;
+    padding-left: 0px;
+    color: #A2A4A4;
+}
+
+.loginbttm {
+    padding: 0px;
+}
+</style>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-2"></div>
+            <div class="col-lg-6 col-md-8 login-box">
+                <div class="col-lg-12 login-key">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                </div>
+                <div class="col-lg-12 login-title">
+                    ADMIN PANEL
+                </div>
+
+                <div class="col-lg-12 login-form">
+                    <div class="col-lg-12 login-form">
+                        <form asp-action="Giris" method="post">
+							<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Eposta" class="form-control-label">KULLANICI</label>
+                                <input asp-for="Eposta" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Parola" class="form-control-label">PAROLA</label>
+                                <input asp-for="Parola" type="password" class="form-control" i>
+                            </div>
+
+                            <div class="col-lg-12 loginbttm">
+                                <div class="col-lg-6 login-btm login-text">
+                                    <!-- Error Message -->
+                                </div>
+                                <div class="col-lg-6 login-btm login-button">
+                                    <button type="submit" class="btn btn-outline-primary">LOGIN</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-2"></div>
+            </div>
+        </div>
 	</div>
-	<style type="text/css">
-		.site-link{
-      padding: 5px 15px;
-			position: fixed;
-			z-index: 99999;
-			background: #fff;
-			box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
-			right: 30px;
-			bottom: 30px;
-			border-radius: 10px;
-		}
-		.site-link img{
-			width: 30px;
-			height: 30px;
-		}
-	</style>
+
+
+
+
+
+
+
+<script>
+
+</script>
+
 
 @* <h1>Giriş</h1>
 <form action="Giris" method="post">
