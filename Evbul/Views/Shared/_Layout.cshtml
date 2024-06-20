@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
     <link rel="stylesheet" href="/css/fontawesome.css">
@@ -34,12 +36,21 @@
                         <a href="/" class="logo">
                             <h1>Evbul</h1>
                         </a>
+                        
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-
+                            <li >
+                                <form class="d-flex" asp-controller="Evler" asp-action="Index" method="get">
+                                    <input class="form-control me-2" name="searchString" type="text"
+                                    placeholder="Hayalinizdeki tatil" aria-label="Search">
+                                    <button class="d-flex-inline  btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+                                </form>
+                            </li>
+                            
                             @if (User.Identity!.IsAuthenticated)
                             {
+                                
                                 <li><a href="/">Anasayfa</a></li>
                                 <li>
                                     <a href="/evler/list">Evlerim</a>
@@ -48,11 +59,12 @@
                                     <a href="/profile/@User.Identity.Name">@User.Identity.Name</a>
                                 </li>
                                 <li>
-                                    <a href="/kullanicilar/cikis" >Çıkış</a>
+                                    <a href="/kullanicilar/cikis">Çıkış</a>
                                 </li>
                             }
                             else
                             {
+                                
                                 <li><a href="/">Anasayfa</a></li>
                                 <li><a href="/kullanicilar/giris">Giriş</a></li>
                                 <li><a href="/kullanicilar/kayit">Kayıt</a></li>
@@ -116,9 +128,9 @@
     </ul>
     </div>
     </nav> *@
-    
-        @RenderBody()
-    
+
+    @RenderBody()
+
     @RenderSection("Scripts", required: false)
 
 
