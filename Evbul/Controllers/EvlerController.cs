@@ -105,6 +105,9 @@ public class EvlerController : Controller
                     YatakOdasi = model.YatakOdasi,
                     YatakSayisi = model.YatakSayisi,
                     Banyo = model.Banyo,
+                    Metrekare = model.Metrekare,
+                    Kat = model.Kat,
+                    Park = model.Park,
                     Fiyat = model.Fiyat,
                     Url = model.Url,
                     KullaniciId = int.Parse(userId 
@@ -176,6 +179,9 @@ public class EvlerController : Controller
                 YatakOdasi = model.YatakOdasi,
                 YatakSayisi = model.YatakSayisi,
                 Banyo = model.Banyo,
+                Metrekare = model.Metrekare,
+                Kat = model.Kat,
+                Park = model.Park,
                 Fiyat = model.Fiyat,
                 Url = model.Url,
                 AktifMi = model.AktifMi

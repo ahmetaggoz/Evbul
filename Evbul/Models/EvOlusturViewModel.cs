@@ -27,6 +27,15 @@ public class EvOlusturViewModel
     [Display(Name ="Banyo")]
     public int Banyo { get; set; }
     [Required]
+    [Display(Name ="Metrekare")]
+    public int Metrekare { get; set; }
+    [Required]
+    [Display(Name ="Kat")]
+    public int Kat { get; set; }
+    [Required]
+    [Display(Name ="Park")]
+    public int Park { get; set; }
+    [Required]
     [Display(Name ="Fiyat")]
     public int Fiyat { get; set; }
 

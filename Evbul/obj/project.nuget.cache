@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y6Dm8GPHhAmQyAn/aHf8CcFWSqwW3mC4s0Y4oCwApiHh2GJqCE94odlOzNFslSLvfMwjkb9unhECHpGahXUNvA==",
+  "dgSpecHash": "le3BrRnT0IzvPDEnjjOeGRpZZ2z0c5Ld/zpEo8WGZ8rYPw2xEfwxDvBIi1+f7E+kDIix++P2rTQguxvUU6KRew==",
   "success": true,
-  "projectFilePath": "c:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\Evbul.csproj",
+  "projectFilePath": "C:\\Users\\ahmet\\OneDrive\\Masaüstü\\Bitirme Projem\\aspnetcore\\Evbul\\Evbul\\Evbul.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ahmet\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\ahmet\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.10\\microsoft.data.sqlite.core.7.0.10.nupkg.sha512",

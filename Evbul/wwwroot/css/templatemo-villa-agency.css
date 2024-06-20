@@ -106,7 +106,7 @@ p {
 
 img {
   width: 100%;
-  overflow: hidden;
+  overflow: hidden; 
 }
 
 /* 
@@ -1375,7 +1375,7 @@ Page Header Style
 */
 
 .page-heading {
-  background-image: url(/img/page-heading-bg.jpg);
+  background-image: url(../img/page-heading-bg.jpg); 
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
